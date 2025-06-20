@@ -6,7 +6,7 @@ tools:
   - temperature
 input:
   schema:
-    cities(array): string # arrays are denoted via parentheses
+    cities(array): string
 output:
   format: json
   schema:

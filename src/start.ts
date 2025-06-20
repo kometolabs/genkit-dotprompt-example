@@ -22,9 +22,7 @@ async function main() {
     },
     async ({ city }) => {
       try {
-        const min = -10
-        const max = 40
-        const temperature = (Math.random() * (max - min) + min).toFixed(0)
+        const temperature = (Math.random() * (40 + 10) - 10).toFixed(0)
 
         return `${temperature}°C`
       } catch (error: any) {
@@ -36,15 +34,15 @@ async function main() {
   const citiesPrompt = await ai.prompt('cities')
   const { text: citiesText } = await citiesPrompt()
 
+  const { cities } = JSON.parse(citiesText)
+
   const temperaturePrompt = await ai.prompt('temperature')
   const { text: temperatureText } = await temperaturePrompt(
-    {
-      cities: JSON.parse(citiesText),
-    },
-    { maxTurns: 10 }
+    { cities },
+    { maxTurns: 6 }
   )
 
-  console.log(JSON.stringify(temperatureText, null, 2))
+  console.log(temperatureText)
 }
 
 main().catch((error) => {
