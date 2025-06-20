@@ -23,7 +23,6 @@ async function main() {
     async ({ city }) => {
       try {
         const temperature = (Math.random() * (40 + 10) - 10).toFixed(0)
-
         return `${temperature}°C`
       } catch (error: any) {
         return error.message
@@ -31,11 +30,14 @@ async function main() {
     }
   )
 
+  // Get the list of 5 largest cities in the world using the cities prompt.
   const citiesPrompt = await ai.prompt('cities')
   const { text: citiesText } = await citiesPrompt()
 
   const { cities } = JSON.parse(citiesText)
 
+  // User the received list of cities to get the temperature for each city using the temperature prompt,
+  // which uses the temperature tool under the hood.
   const temperaturePrompt = await ai.prompt('temperature')
   const { text: temperatureText } = await temperaturePrompt(
     { cities },
