@@ -1,0 +1,23 @@
+{
+  "name": "genkit-dotprompt-example",
+  "version": "1.0.0",
+  "description": "Genkit DotPrompt Example",
+  "scripts": {
+    "start": "tsx src/start.ts",
+    "format": "prettier --write './src/**/*.{js,ts}'"
+  },
+  "license": "MIT",
+  "packageManager": "pnpm@10.12.1",
+  "dependencies": {
+    "@genkit-ai/googleai": "^1.13.0",
+    "dotenv": "^16.5.0",
+    "gemini": "^7.5.2",
+    "genkit": "^1.13.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.3",
+    "prettier": "^3.5.3",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3"
+  }
+}

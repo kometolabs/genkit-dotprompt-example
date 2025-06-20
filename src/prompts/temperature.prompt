@@ -1,0 +1,20 @@
+---
+model: googleai/gemini-2.5-flash
+config:
+  temperature: 0
+tools:
+  - temperature
+input:
+  schema:
+    cities(array): string # arrays are denoted via parentheses
+output:
+  format: json
+  schema:
+    cities(array):
+      name: string
+      temperature: string
+---
+Get temperature for the following cities using the temperature tool:
+{{#each cities}}
+  - {{this}}
+{{/each}}
