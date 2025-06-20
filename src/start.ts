@@ -9,6 +9,7 @@ async function main() {
     promptDir: 'src/prompts',
   })
 
+  // Define a simple temperature tool which gives a random temperature for the given city.
   ai.defineTool(
     {
       name: 'temperature',
