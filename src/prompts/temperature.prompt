@@ -14,7 +14,7 @@ output:
       name: string
       temperature: string
 ---
-Get temperature for the following cities using the temperature tool:
+Get temperature for the following cities:
 {{#each cities}}
   - {{this}}
 {{/each}}

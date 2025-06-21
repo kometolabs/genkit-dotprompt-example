@@ -33,16 +33,15 @@ async function main() {
 
   // Get the list of 5 largest cities in the world using the cities prompt.
   const citiesPrompt = await ai.prompt('cities')
-  const { text: citiesText } = await citiesPrompt()
+  const { text: citiesText } = await citiesPrompt({ num: 5 })
 
   const { cities } = JSON.parse(citiesText)
 
-  // User the received list of cities to get the temperature for each city using the temperature prompt,
-  // which uses the temperature tool under the hood.
+  // Get temperature for each city through the temperature prompt.
   const temperaturePrompt = await ai.prompt('temperature')
   const { text: temperatureText } = await temperaturePrompt(
     { cities },
-    { maxTurns: 6 }
+    { maxTurns: 10 }
   )
 
   console.log(temperatureText)

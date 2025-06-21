@@ -2,9 +2,12 @@
 model: googleai/gemini-2.0-flash
 config:
   temperature: 0
+input:
+  schema:
+    num: integer
 output:
   format: json
   schema:
     cities(array): string
 ---
-List top 5 largest cities in the world.
+List top {{num}} largest cities in the world.
