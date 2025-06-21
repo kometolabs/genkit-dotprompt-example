@@ -23,7 +23,7 @@ async function main() {
     },
     async ({ city }) => {
       try {
-        const temperature = (Math.random() * (40 + 10) - 10).toFixed(0)
+        const temperature = (Math.random() * city.length * 10 - 20).toFixed(0)
         return `${temperature}°C`
       } catch (error: any) {
         return error.message
