@@ -9,7 +9,7 @@ async function main() {
     promptDir: 'src/prompts',
   })
 
-  // Define a simple temperature tool which gives a random temperature for the given city.
+  // Define a simple city temperature tool.
   ai.defineTool(
     {
       name: 'temperature',
@@ -34,7 +34,6 @@ async function main() {
   // Get the list of 5 largest cities in the world using the cities prompt.
   const citiesPrompt = await ai.prompt('cities')
   const { text: citiesText } = await citiesPrompt({ num: 5 })
-
   const { cities } = JSON.parse(citiesText)
 
   // Get temperature for each city through the temperature prompt.
