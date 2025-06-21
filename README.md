@@ -1,6 +1,6 @@
 # Genkit dotPrompt Example
 
-A companion project for the post https://komelin.com/blog/prompts-are-code-dotprompt-firebase-genkit
+A companion project for the blog post https://komelin.com/blog/prompts-are-code-dotprompt-firebase-genkit
 
 ## Installation
 
