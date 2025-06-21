@@ -8,7 +8,7 @@ Clone the repo:
 
 ```bash
 git clone git@github.com:kometolabs/genkit-dotprompt-example.git
-cd ai-sdk-comparison
+cd genkit-dotprompt-example
 ```
 
 Install dependencies:
