@@ -6,6 +6,7 @@ async function main() {
   const ai = genkit({
     plugins: [googleAI({ apiKey: process.env.GOOGLE_API_KEY })],
     model: gemini('gemini-2.0-flash'),
+    // Set the path to your prompt files.
     promptDir: 'src/prompts',
   })
 
@@ -36,14 +37,15 @@ async function main() {
   const { text: citiesText } = await citiesPrompt({ num: 5 })
   const { cities } = JSON.parse(citiesText)
 
-  // Get temperature for each city through the temperature prompt.
+  // Get temperature for each city through the temperature prompt,
+  // which calls the temperature tool by its name.
   const temperaturePrompt = await ai.prompt('temperature')
   const { text: temperatureText } = await temperaturePrompt(
     { cities },
     { maxTurns: 10 }
   )
 
-  console.log(temperatureText)
+console.log(temperatureText)
 }
 
 main().catch((error) => {
